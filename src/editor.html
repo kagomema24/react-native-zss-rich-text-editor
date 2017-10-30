@@ -917,7 +917,8 @@
 				whenPastingInsertAsPlainText('zss_editor_title');
 				whenPastingInsertAsPlainText('zss_editor_content');
 
-				zss_editor.focusTitle();
+				// Fix: do not focus title on init()
+				// zss_editor.focusTitle();
 
 				setTimeout(function() {
 					WebViewBridge.send(JSON.stringify({type: 'ZSS_INITIALIZED'}))
@@ -1591,6 +1592,8 @@
 				selection.removeAllRanges();
 				selection.addRange(range);
 				editor.focus();
+				//Fix: when focus scroll to top
+				window.scrollTo(0, 0);
 			}
 
 
@@ -1663,9 +1666,9 @@
 			}
 
 			body {
-				padding-left:10px;
-				padding-right:10px;
-				padding-top: 0px;
+				// padding-left:10px;
+				// padding-right:10px;
+				padding-top: 20px;
 				padding-bottom: 0px;
 				overflow-y: scroll;
 				-webkit-overflow-scrolling: touch;
@@ -1698,8 +1701,8 @@
 			}
 
 			#zss_editor_content {
-				padding-left: 10px;
-				padding-right: 10px;
+				// padding-left: 10px;
+				// padding-right: 10px;
 			}
 
 			div.zss_editor_title {
@@ -1710,8 +1713,8 @@
 			}
 
 			#zss_editor_title {
-				padding-left: 10px;
-				padding-right: 10px;
+				// padding-left: 10px;
+				// padding-right: 10px;
 			}
 
 			[placeholder]:empty:before {
