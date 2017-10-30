@@ -58,8 +58,9 @@ export default class RichTextEditor extends Component {
       ];
     } else {
       this.keyboardEventListeners = [
-        Keyboard.addListener('keyboardDidShow', this._onKeyboardWillShow),
-        Keyboard.addListener('keyboardDidHide', this._onKeyboardWillHide)
+        // Change: not to handle event by self
+        // Keyboard.addListener('keyboardDidShow', this._onKeyboardWillShow),
+        // Keyboard.addListener('keyboardDidHide', this._onKeyboardWillHide)
       ];
     }
   }
